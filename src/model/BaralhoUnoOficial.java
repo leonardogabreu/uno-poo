@@ -22,7 +22,7 @@ public class BaralhoUnoOficial extends Baralho {
                 this.cartas.add(new CartaNumero(corAtual, valorAtual));
             }
             //Cartas Especiais
-            for (int i=10; i<13; i++) {
+            for (int i=11; i<14; i++) {
                 this.cartas.add(new CartaAcao(corAtual, Valor.values()[i]));
                 this.cartas.add(new CartaAcao(corAtual, Valor.values()[i]));
             }
