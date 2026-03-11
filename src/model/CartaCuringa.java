@@ -10,6 +10,15 @@ public class CartaCuringa extends Carta{
 
     @Override
     public void aplicarEfeito(Jogo mesa) {
-        System.out.println("Efeito aplicado! (Em fase de desenvolvimento");     //TODO ARRUMAR OS EFEITOS
+        switch(this.valor) {
+            case CORINGA -> { //TODO Cauê, essa parte é com vc. Qnd for fazer, o jogador vai escolher o curinga
+                // TODO e vc vai ter q usar um scanner pra ele escolher a cor, e usar cartaEscolhida.setCor(Cor.COR)
+                //em que COR é a cor que o usuario escolheu, pra mudar a cor do curinga de preto pra verde
+            }
+            case CORINGA_MAIS_QUATRO -> {
+                mesa.avancarTurno();
+                mesa.comprarCartas(4);
+            }
+        }
     }
 }

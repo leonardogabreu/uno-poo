@@ -22,10 +22,10 @@ public abstract class Carta {
         return valor;
     }
 
-    // A MÁGICA DO POLIMORFISMO:
-    // Cada carta filha vai ter que implementar sua própria versão desse métod0.
-    // O jogo só vai chamar carta.aplicarEfeito() e a própria carta sabe o que fazer.
     public abstract void aplicarEfeito(Jogo mesa);
+
+    public void setCor(Cor cor) {
+        this.cor = cor; }
 
     public String toString() {
         return valor + " " + cor;

@@ -72,8 +72,8 @@ public class Jogo {
         sentidoHorario= sentidoHorario ^ true;
     }
 
-    public void comprarCartas(int quantidade){
-        for (int i=0; i<quantidade; i++){
+    public void comprarCartas(int quantidade) {
+        for (int i = 0; i < quantidade; i++) {
             getJogadorDaVez().getMao().add(baralho.comprarCarta());
         }
     }

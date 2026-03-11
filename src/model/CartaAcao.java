@@ -10,6 +10,13 @@ public class CartaAcao extends Carta {
 
     @Override
     public void aplicarEfeito(Jogo mesa) {
-        System.out.println("Efeito aplicado! (Em fase de desenvolvimento"); //TODO Arrumar os efeitos de cada carta
+        switch(this.valor){
+            case INVERTER ->  mesa.inverterSentido();
+            case PULAR ->  mesa.avancarTurno();
+            case MAIS_DOIS ->  {
+                mesa.avancarTurno();
+            mesa.comprarCartas(2);
+            }
+        }
     }
 }
