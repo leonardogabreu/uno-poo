@@ -74,7 +74,26 @@ public class Jogo {
 
     public void comprarCartas(int quantidade) {
         for (int i = 0; i < quantidade; i++) {
+            verificarEReciclarBaralho();
             getJogadorDaVez().getMao().add(baralho.comprarCarta());
         }
+    }
+
+    public void jogadorCompraCarta(){
+        verificarEReciclarBaralho();
+        getJogadorDaVez().getMao().add(baralho.comprarCarta());
+        avancarTurno();
+    }
+
+    private void verificarEReciclarBaralho(){
+        if (!baralho.temCartas()){
+            Carta topo = this.pilhaDescarte.getLast();
+            this.pilhaDescarte.removeLast();
+            baralho.reabastecer(this.pilhaDescarte);
+            this.pilhaDescarte.clear();
+            this.pilhaDescarte.add(topo);
+            System.out.println("Baralho atualziado! Pilha de cartas esvaziada.");
+        }
+
     }
 }
