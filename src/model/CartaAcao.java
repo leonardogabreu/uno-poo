@@ -1,5 +1,7 @@
 package model;
 
+import controller.Jogo;
+
 public class CartaAcao extends Carta {
 
     public CartaAcao(Cor cor, Valor valor) {
@@ -7,7 +9,7 @@ public class CartaAcao extends Carta {
     }
 
     @Override
-    public void aplicarEfeito() {
-        System.out.println("Efeito aplicado! (Em fase de desenvolvimento");
+    public void aplicarEfeito(Jogo mesa) {
+        System.out.println("Efeito aplicado! (Em fase de desenvolvimento"); //TODO Arrumar os efeitos de cada carta
     }
 }

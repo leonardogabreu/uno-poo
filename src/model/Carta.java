@@ -1,5 +1,7 @@
 package model;
 
+import controller.Jogo;
+
 public abstract class Carta {
     // Usamos 'protected' para que as classes filhas possam acessar essas variáveis
     protected Cor cor;
@@ -23,7 +25,7 @@ public abstract class Carta {
     // A MÁGICA DO POLIMORFISMO:
     // Cada carta filha vai ter que implementar sua própria versão desse métod0.
     // O jogo só vai chamar carta.aplicarEfeito() e a própria carta sabe o que fazer.
-    public abstract void aplicarEfeito();
+    public abstract void aplicarEfeito(Jogo mesa);
 
     public String toString() {
         return valor + " " + cor;
