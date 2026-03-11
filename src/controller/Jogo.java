@@ -94,6 +94,12 @@ public class Jogo {
             this.pilhaDescarte.add(topo);
             System.out.println("Baralho atualziado! Pilha de cartas esvaziada.");
         }
+    }
 
+    public Jogador verificaVencedor(){
+        for (Jogador j : this.jogadores){
+            if(j.getMao().isEmpty()) return j;
+        }
+        return null;
     }
 }
