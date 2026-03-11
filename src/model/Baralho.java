@@ -12,6 +12,7 @@ public abstract class Baralho {
     }
 
     public abstract void montarBaralho();
+
     public void embaralhar(){
         Collections.shuffle(this.cartas);
     }
