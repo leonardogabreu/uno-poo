@@ -20,25 +20,25 @@ public class Jogo {
         this.jogadores = jogadores;
         this.baralho = baralho;
         this.pilhaDescarte = new ArrayList<>();
-        this.jogadorAtual = 0; // O primeiro jogador da lista começa
+        this.jogadorAtual = 0; 
         this.sentidoHorario = true;
     }
 
+    public Carta getCartaTopo() {
+        return this.pilhaDescarte.get(this.pilhaDescarte.size() - 1);
+    }
+
     public void iniciarPartida(){
-
         baralho.embaralhar();
-
         for (Jogador j : this.jogadores){
             for(int i=0; i<7; i++){
                 j.getMao().add(baralho.comprarCarta());
             }
         }
-
         this.pilhaDescarte.add(baralho.comprarCarta());
     }
 
     public void avancarTurno(){
-
         int totalJogadores = this.jogadores.size();
         if(this.sentidoHorario){
             this.jogadorAtual = (jogadorAtual + 1)% totalJogadores;
@@ -92,7 +92,7 @@ public class Jogo {
             baralho.reabastecer(this.pilhaDescarte);
             this.pilhaDescarte.clear();
             this.pilhaDescarte.add(topo);
-            System.out.println("Baralho atualziado! Pilha de cartas esvaziada.");
+            System.out.println("Baralho atualizado! Pilha de cartas esvaziada.");
         }
     }
 
